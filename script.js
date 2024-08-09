@@ -18,4 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
     speechButton.addEventListener('click', () => {
         recognition.start();
     })
+
+    recognition.onresult = event => {
+        const transcript = event.results[0][0].transcript;
+        resultDiv.textContent = transcript;
+    }
 })
