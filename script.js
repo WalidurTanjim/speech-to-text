@@ -23,4 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const transcript = event.results[0][0].transcript;
         textField.textContent = transcript;
     }
+
+    recognition.onerror = (event) => {
+        textField.textContent = 'Error occurred in recognition: ' + event.error;
+    };
 })
