@@ -10,4 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const recognition = new speechRecognition();
+
+    recognition.continuous = false;
+    recognition.interimResults = false;
+    recognition.lang = "en-US";
+
+    speechButton.addEventListener('click', () => {
+        recognition.start();
+    })
 })
